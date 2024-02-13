@@ -68,13 +68,14 @@ const getOptionalInput = (name: string) => core.getInput(name) || undefined;
             "Found existing auth token for the npm registry in the user .npmrc file"
           );
         } else {
+          /* KOSMONAUT EDIT FOR GITHUB PACKAGES
           core.info(
             "Didn't find existing auth token for the npm registry in the user .npmrc file, creating one"
           );
           fs.appendFileSync(
             userNpmrcPath,
             `\n//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}\n`
-          );
+          );*/
         }
       } else {
         core.info("No user .npmrc file found, creating one");
