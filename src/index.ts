@@ -55,7 +55,7 @@ const getOptionalInput = (name: string) => core.getInput(name) || undefined;
         "No changesets found, attempting to publish any unpublished packages to npm"
       );
 
-      let userNpmrcPath = `${process.env.HOME}/.npmrc`;
+      let userNpmrcPath = `./.npmrc`;
       if (fs.existsSync(userNpmrcPath)) {
         core.info("Found existing user .npmrc file");
         const userNpmrcContent = await fs.readFile(userNpmrcPath, "utf8");
