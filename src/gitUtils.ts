@@ -54,7 +54,7 @@ export const reset = async (
 
 export const commitAll = async (message: string) => {
   await exec("git", ["add", "."]);
-  await exec("git", ["commit", "-m", message]);
+  await exec("git", ["commit", "-m", message, "--no-verify"]);
 };
 
 export const checkIfClean = async (): Promise<boolean> => {
